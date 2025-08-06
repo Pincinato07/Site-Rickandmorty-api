@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty - Personagens</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <i class="fas fa-rocket"></i>
+                Rick and Morty
+            </h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar personagem..." class="search-input">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button id="favoritesBtn" class="favorites-btn">
+                <i class="fas fa-heart"></i>
+                <span id="favoritesCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="filters">
+                <select id="statusFilter" class="filter-select">
+                    <option value="">Todos os status</option>
+                    <option value="alive">Vivo</option>
+                    <option value="dead">Morto</option>
+                    <option value="unknown">Desconhecido</option>
+                </select>
+                <select id="speciesFilter" class="filter-select">
+                    <option value="">Todas as espécies</option>
+                    <option value="human">Humano</option>
+                    <option value="alien">Alienígena</option>
+                    <option value="robot">Robô</option>
+                    <option value="animal">Animal</option>
+                </select>
+            </div>
+
+            <div class="characters-grid" id="charactersGrid">
+                <!-- Personagens vão ser carregados aqui -->
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Carregando personagens...</p>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button id="prevBtn" class="pagination-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    Anterior
+                </button>
+                <span id="pageInfo" class="page-info">Página 1</span>
+                <button id="nextBtn" class="pagination-btn">
+                    Próxima
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="page-input-container">
+                    <span>Ir para:</span>
+                    <input type="number" id="pageInput" class="page-input" min="1" placeholder="1">
+                    <button id="goToPageBtn" class="go-to-page-btn">Ir</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de detalhes do personagem -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent">
+                <!-- Conteúdo do modal vai ser carregado aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de favoritos -->
+    <div id="favoritesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Personagens Favoritos</h2>
+            <div id="favoritesGrid" class="favorites-grid">
+                <!-- Favoritos vão ser carregados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
